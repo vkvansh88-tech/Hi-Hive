@@ -1,0 +1,443 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Hi-Hive Settings</title>
+
+    <link rel="stylesheet" href="settings.css">
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500&family=Playfair+Display:wght@500&display=swap"
+        rel="stylesheet">
+
+</head>
+
+<body>
+    <div id="topAlert" class="top-alert"></div>
+
+    <div class="settings-page">
+
+        <!-- Sidebar -->
+
+        <div class="sidebar">
+
+            <div class="sidebar-header">
+                <span class="back-btn" onclick="goBack()">←</span>
+                <h2>Settings</h2>
+            </div>
+
+            <ul>
+
+                <li class="menu-item active" onclick="changeSettings(this,'account')">Account & Privacy</li>
+
+                <li class="menu-item" onclick="changeSettings(this,'notifications')">Notifications</li>
+
+                <li class="menu-item" onclick="changeSettings(this,'chat')">Chat</li>
+
+                <li class="menu-item" onclick="changeSettings(this,'security')">Security</li>
+
+                <li class="menu-item" onclick="changeSettings(this,'data')">Data & Storage</li>
+
+                <li class="menu-item" onclick="changeSettings(this,'language')">Language</li>
+
+                <li class="menu-item" onclick="changeSettings(this,'help')">Help & Support</li>
+
+                <li class="menu-item" onclick="changeSettings(this,'about')">About Hi-Hive</li>
+
+            </ul>
+
+        </div>
+
+
+        <!-- Content -->
+
+        <div class="settings-content">
+            <div id="account" class="section active-section">
+
+                <h3>Account & Privacy</h3>
+
+                <label>Change Username</label>
+                <input type="text" id="username" placeholder="Enter new username">
+
+                <label>Change Email</label>
+                <button class="settings-btn gold-btn" onclick="openEmailPopup()">
+                    Change Email
+                </button>
+                <label>Change Password</label>
+                <button class="settings-btn gold-btn" onclick="openPasswordPopup()">
+                    Change Password
+                </button>
+
+                <label>Edit Bio / Status</label>
+                <textarea id="bio" placeholder="Write your status or bio"></textarea>
+
+
+                <button class="settings-btn gold-btn" onclick="saveAccount()">Save Changes</button>
+                <br>
+
+                <div class="account-actions">
+                    <button class="settings-btn danger-btn" onclick="deleteAccount()">Delete Account</button>
+
+                    <button class="settings-btn logout-btn" onclick="logout()">Log Out</button>
+                </div>
+            </div>
+            <!-- Password Popup -->
+
+            <div id="passwordPopup" class="popup-overlay">
+
+                <div class="popup-box">
+
+                    <h3>Change Password</h3>
+
+                    <input type="password" id="newPassword" placeholder="Enter new password">
+
+                    <input type="password" id="confirmNewPassword" placeholder="Confirm new password">
+
+                    <div class="popup-buttons">
+
+                        <button class="save-btn" onclick="changePassword()">Save</button>
+
+                        <button class="cancel-btn" onclick="closePasswordPopup()">Cancel</button>
+
+                    </div>
+
+                </div>
+
+            </div>
+            <!-- Email Popup -->
+
+            <div id="emailPopup" class="popup-overlay">
+
+                <div class="popup-box">
+
+                    <h3>Change Email</h3>
+
+                    <input type="email" id="oldEmail" placeholder="Enter old email">
+
+                    <input type="email" id="newEmail" placeholder="Enter new email">
+
+                    <input type="email" id="confirmEmail" placeholder="Confirm new email">
+
+                    <div class="popup-buttons">
+
+                        <button class="save-btn" onclick="changeEmail()">Save</button>
+
+                        <button class="cancel-btn" onclick="closeEmailPopup()">Cancel</button>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+            <div id="notifications" class="section">
+
+                <h3>Notification Settings</h3>
+
+                <div class="setting-row">
+                    <span>Enable Notifications</span>
+                    <label class="switch">
+                        <input type="checkbox" id="enableNotif">
+                        <span class="slider"></span>
+                    </label>
+                </div>
+
+                <div class="setting-row">
+                    <span>Message Alerts</span>
+                    <label class="switch">
+                        <input type="checkbox" id="messageAlert">
+                        <span class="slider"></span>
+                    </label>
+                </div>
+
+                <div class="setting-row">
+                    <span>Group Notifications</span>
+                    <label class="switch">
+                        <input type="checkbox" id="groupNotif">
+                        <span class="slider"></span>
+                    </label>
+                </div>
+
+                <div class="setting-row">
+                    <span>Show Message Preview</span>
+                    <label class="switch">
+                        <input type="checkbox" id="previewNotif">
+                        <span class="slider"></span>
+                    </label>
+                </div>
+
+                <div class="setting-row">
+                    <span>Notification Sound</span>
+                    <label class="switch">
+                        <input type="checkbox" id="soundNotif">
+                        <span class="slider"></span>
+                    </label>
+                </div>
+
+                <div class="setting-row">
+                    <span>Do Not Disturb</span>
+                    <label class="switch">
+                        <input type="checkbox" id="dndMode">
+                        <span class="slider"></span>
+                    </label>
+                </div>
+
+                <button onclick="saveNotifications()" class="settings-btn gold-btn">Save Notification Settings</button>
+
+            </div>
+
+            <div id="chat" class="section">
+
+                <h3>Chat Settings</h3>
+
+                <div class="setting-row">
+                    <span>Enter key sends message</span>
+                    <label class="switch">
+                        <input type="checkbox" id="enterSend">
+                        <span class="slider"></span>
+                    </label>
+                </div>
+
+                <div class="setting-row">
+                    <span>Show typing indicators</span>
+                    <label class="switch">
+                        <input type="checkbox" id="typingIndicator">
+                        <span class="slider"></span>
+                    </label>
+                </div>
+
+                <div class="setting-row">
+                    <span>Send read receipts</span>
+                    <label class="switch">
+                        <input type="checkbox" id="readReceipts">
+                        <span class="slider"></span>
+                    </label>
+                </div>
+
+                <div class="setting-row">
+                    <span>Auto download images</span>
+                    <label class="switch">
+                        <input type="checkbox" id="autoImages">
+                        <span class="slider"></span>
+                    </label>
+                </div>
+
+                <div class="setting-row">
+                    <span>Auto download videos</span>
+                    <label class="switch">
+                        <input type="checkbox" id="autoVideos">
+                        <span class="slider"></span>
+                    </label>
+                </div>
+
+                <button class="settings-btn gold-btn" onclick="saveChatSettings()">Save Chat Settings</button>
+
+                <div class="chat-actions">
+
+                    <button class="settings-btn gold-btn" onclick="backupChats()">Backup Chats</button>
+
+                    <button class="settings-btn danger-btn" onclick="clearChats()">Clear Chat History</button>
+
+                </div>
+
+            </div>
+            <div id="security" class="section">
+
+                <h3>Security Settings</h3>
+
+                <div class="setting-row">
+                    <span>Two-Factor Authentication</span>
+                    <label class="switch">
+                        <input type="checkbox" id="twoFactor">
+                        <span class="slider"></span>
+                    </label>
+                </div>
+
+                <div class="setting-row">
+                    <span>Login Alerts</span>
+                    <label class="switch">
+                        <input type="checkbox" id="loginAlerts">
+                        <span class="slider"></span>
+                    </label>
+                </div>
+
+                <div class="setting-row">
+                    <span>Track Device Activity</span>
+                    <label class="switch">
+                        <input type="checkbox" id="deviceActivity">
+                        <span class="slider"></span>
+                    </label>
+                </div>
+
+                <div class="setting-row">
+                    <span>Auto Logout (Inactive)</span>
+                    <label class="switch">
+                        <input type="checkbox" id="autoLogout">
+                        <span class="slider"></span>
+                    </label>
+                </div>
+                <button class="settings-btn gold-btn" onclick="saveSecuritySettings()">Save Security Settings</button>
+
+                <div class="security-actions">
+
+                    <button class="settings-btn danger-btn" onclick="logoutAllDevices()">Logout From All Devices</button>
+
+                </div>
+
+            </div>
+            <div id="data" class="section">
+
+                <h3>Data & Storage Settings</h3>
+
+                <div class="setting-row">
+                    <span>Auto Download Images</span>
+                    <label class="switch">
+                        <input type="checkbox" id="dataImages">
+                        <span class="slider"></span>
+                    </label>
+                </div>
+
+                <div class="setting-row">
+                    <span>Auto Download Videos</span>
+                    <label class="switch">
+                        <input type="checkbox" id="dataVideos">
+                        <span class="slider"></span>
+                    </label>
+                </div>
+
+                <div class="setting-row">
+                    <span>Auto Download Documents</span>
+                    <label class="switch">
+                        <input type="checkbox" id="dataDocs">
+                        <span class="slider"></span>
+                    </label>
+                </div>
+
+                <div class="setting-row">
+                    <span>Low Data Mode</span>
+                    <label class="switch">
+                        <input type="checkbox" id="lowData">
+                        <span class="slider"></span>
+                    </label>
+                </div>
+
+                <div class="setting-row">
+                    <span>Storage Used</span>
+                    <span id="storageUsed">Calculating...</span>
+                </div>
+
+                <button class="settings-btn gold-btn" onclick="saveDataSettings()">Save Data Settings</button>
+
+                <div class="data-actions">
+
+                    <button class="settings-btn gold-btn" onclick="exportChatData()">Export Chat Data</button>
+
+                    <button class="settings-btn danger-btn" onclick="clearCache()">Clear Cached Data</button>
+
+                </div>
+
+            </div>
+
+
+            <div id="language" class="section">
+
+                <h3>Language Settings</h3>
+
+                <div class="setting-row">
+                    <span>Select Language</span>
+
+                    <select id="languageSelect">
+
+                        <option value="en">English</option>
+                        <option value="hi">Hindi</option>
+                        <option value="pa">Punjabi</option>
+                        <option value="es">Spanish</option>
+                        <option value="fr">French</option>
+
+                    </select>
+
+                </div>
+
+                <button class="settings-btn gold-btn" onclick="saveLanguage()">Save Language</button>
+
+                <p class="language-info">
+                    Changing the language will update the interface language of Hi-Hive.
+                </p>
+
+            </div>
+
+            <div id="help" class="section full-page">
+
+                <h3>Help & Support</h3>
+
+                <p>
+                    Welcome to the Hi-Hive Help & Support center. Our goal is to make your experience on Hi-Hive smooth,
+                    safe, and enjoyable.
+                    If you face any issues while using the platform such as login problems, messaging errors, account
+                    settings difficulties,
+                    or any unexpected technical bugs, our support team is here to assist you.
+                </p>
+
+                <p>
+                    You can reach out to us if you need help understanding any feature of Hi-Hive, want to report a
+                    problem,
+                    or would like to suggest improvements for the platform. Your feedback helps us improve the
+                    application
+                    and create a better communication experience for everyone.
+                </p>
+
+                <p>
+                    We aim to respond to all support requests as quickly as possible. Thank you for being part of the
+                    Hi-Hive
+                    community and helping us grow.
+                </p>
+
+                <!-- Contact Button -->
+
+                <a href="support.html" class="contact-btn">Contact Us</a>
+
+            </div>
+            <div id="about" class="section full-page">
+
+                <h3>About Hi-Hive</h3>
+
+                <p>
+                    Hi-Hive is a modern chatting platform designed to make communication simple, fast, and secure.
+                    Our goal is to create a comfortable space where people can connect, share ideas, and stay in touch
+                    with friends and communities. The platform focuses on user-friendly design, privacy, and smooth
+                    messaging so that conversations feel natural and enjoyable.
+                </p>
+
+                <p>
+                    Hi-Hive was created by <b>Harshita</b> and <b>Vansh Arora</b> as part of a project to build an
+                    innovative communication platform. We are passionate about technology and we continuously work on
+                    improving the platform by adding new features and enhancing the overall user experience.
+                </p>
+
+                <p>
+                    If you have suggestions, feedback, or you face any issues while using Hi-Hive, feel free to contact
+                    us.
+                    We appreciate every message and we will try our best to respond as soon as possible.
+                </p>
+
+                <p class="contact">
+                    <b>Contact Emails</b><br>
+                    Harshita - harshita@example.com<br>
+                    Vansh Arora - vansharora@example.com
+                </p>
+
+
+            </div>
+
+        </div>
+
+    </div>
+    
+    <script src="settings.js"></script>
+
+</body>
+
+</html>

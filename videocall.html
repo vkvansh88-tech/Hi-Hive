@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hi-Hive | Video Call</title>
+    <link rel="stylesheet" href="videocall.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="bg-blob"></div>
+
+    <div class="call-container">
+        <div class="call-info">
+            <div class="avatar-wrapper">
+                <img id="avatar" src="" class="avatar">
+            </div>
+            <h2 id="username" class="brand-text"></h2>
+            <p id="callStatus" class="call-status">Connecting...</p>
+        </div>
+
+        <div class="video-wrapper">
+            <video id="remoteVideo" class="remote-video" autoplay></video>
+        </div>
+
+        <div class="controls-bar">
+            <button class="control-btn" id="micBtn" onclick="toggleMic()">
+                <i class="fas fa-microphone"></i>
+            </button>
+            <button class="control-btn" id="camBtn" onclick="toggleCamera()">
+                <i class="fas fa-video"></i>
+            </button>
+            <button class="control-btn" onclick="toggleSpeaker()">
+                <i class="fas fa-volume-up"></i>
+            </button>
+            <button class="control-btn end-call" onclick="endCall()">
+                <i class="fas fa-phone-slash"></i>
+            </button>
+        </div>
+    </div>
+
+    <script src="videocall.js"></script>
+</body>
+</html>

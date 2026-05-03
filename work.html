@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hi-Hive | Work</title>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:wght@700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link rel="stylesheet" href="chat.css">
+    <link rel="stylesheet" href="work.css">
+</head>
+
+<body>
+    <div class="bg-blob"></div>
+
+    <div class="container">
+        <!-- SIDEBAR -->
+        <nav class="sidebar">
+            <div class="logo"><img src="Logo.png" alt="Hi-Hive"></div>
+            <div class="menu">
+                <a href="chat.html" class="menu-item">
+                    <span class="menu-icon"><i class="fa-solid fa-comment-dots"></i></span>
+                    <span class="menu-text">Chats</span>
+                </a>
+                <a href="calls.html" class="menu-item">
+                    <span class="menu-icon"><i class="fa-solid fa-phone"></i></span>
+                    <span class="menu-text">Calls</span>
+                </a>
+                <a href="groups.html" class="menu-item">
+                    <span class="menu-icon"><i class="fa-solid fa-people-group"></i></span>
+                    <span class="menu-text">Groups</span>
+                </a>
+                <a href="#" class="menu-item active">
+                    <span class="menu-icon"><i class="fa-solid fa-briefcase"></i></span>
+                    <span class="menu-text">Work</span>
+                </a>
+                <a href="friends.html" class="menu-item">
+                    <span class="menu-icon"><i class="fas fa-user-friends"></i></span>
+                    <span class="menu-text">Friends</span>
+                </a>
+            </div>
+            <div class="bottom-menu">
+                <a href="settings.html" class="menu-item"><span class="menu-icon"><i
+                            class="fa-solid fa-gear"></i></span><span class="menu-text">Settings</span></a>
+            </div>
+        </nav>
+
+        <!-- CONTACT LIST SIDEBAR -->
+        <aside class="contacts">
+            <div class="contacts-header">
+                <h2>Work</h2>
+                <div class="search-box">
+                    <i class="fa-solid fa-magnifying-glass"></i>
+                    <input type="text" id="workSearch" placeholder="Search" onkeyup="filterWork()">
+                </div>
+            </div>
+            <div class="contact-list" id="workList">
+                <!-- Populated by JS -->
+            </div>
+        </aside>
+
+        <!-- CHAT AREA -->
+        <main class="chat">
+            <header class="chat-header">
+                <div class="chat-user">
+                    <img id="chatAvatar" src="">
+                    <div class="user-details">
+                        <h3 id="chatName">Select a contact</h3>
+                        <span class="status">Professional Workspace</span>
+                    </div>
+                </div>
+                <div class="chat-actions">
+                    <button onclick="openVoiceCall()"><i class="fa-solid fa-phone"></i></button>
+                    <button onclick="openVideoCall()"><i class="fa-solid fa-video"></i></button>
+                    <button onclick="toggleMenu()"><i class="fa-solid fa-ellipsis-vertical"></i></button>
+
+                    <div class="side-popup" id="chatMenu">
+                        <div class="menu-option"><i class="fa-solid fa-file-export"></i> Export Chat</div>
+                        <div class="menu-option"><i class="fa-solid fa-thumbtack"></i> Pin Workspace</div>
+                        <div class="menu-option danger"><i class="fa-solid fa-archive"></i> Archive</div>
+                    </div>
+                </div>
+            </header>
+
+            <div class="messages" id="messages"></div>
+
+            <footer class="chat-input-area">
+                <div class="input-wrapper">
+                    <label class="attach">
+                        <i class="fa-solid fa-paperclip"></i>
+                        <input type="file" id="fileInput" hidden>
+                    </label>
+
+                    <input id="msgInput" type="text" placeholder="Type work update..." onkeypress="handleKey(event)">
+
+                    <button id="micBtn" class="mic-btn" onclick="toggleRecording()">
+                        <i class="fa-solid fa-microphone"></i>
+                    </button>
+
+                    <button class="send" onclick="sendMessage()">
+                        <i class="fa-solid fa-paper-plane"></i>
+                    </button>
+                </div>
+            </footer>
+        </main>
+    </div>
+
+    <script src="work.js"></script>
+    <script src="voicerecording.js"></script>
+</body>
+
+</html>

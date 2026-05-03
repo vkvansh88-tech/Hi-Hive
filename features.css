@@ -1,0 +1,279 @@
+:root {
+    --bg: #f5f2e8;
+    --gold: #b5a36a;
+    --text: #333333;
+    --white: #ffffff;
+    --glass: rgba(255, 255, 255, 0.5);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    background-color: var(--bg);
+    color: var(--text);
+    overflow-x: hidden;
+}
+
+/* Background Circles */
+.circle {
+    position: fixed;
+    border-radius: 50%;
+    filter: blur(80px);
+    z-index: -1;
+    opacity: 0.3;
+}
+
+.circle-1 {
+    width: 400px;
+    height: 400px;
+    background: var(--gold);
+    top: -100px;
+    right: -50px;
+}
+
+.circle-2 {
+    width: 300px;
+    height: 300px;
+    background: #dcd4b8;
+    bottom: -50px;
+    left: -50px;
+}
+
+/* Navbar Styling */
+.navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 2px 0;
+    background: var(--glass);
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
+    border-bottom: 1px solid var(--glass-border);
+    z-index: 1000;
+}
+
+.nav-container {
+   display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 40px;
+}
+.nav-cta {
+    background: var(--gold);
+    color: white !important;
+    padding: 10px 22px;
+    border-radius: 8px;
+    font-weight: 500 !important;
+}
+.brand-wrapper {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.logo-icon {
+    width: 100px; /* Matching Login Page height */
+    height: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.logo-icon img {
+    height: 100%;
+    width: auto;
+    object-fit: contain;
+
+}
+
+.logo-text {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.6rem;
+    font-weight: bold;
+    color: var(--text);
+    text-decoration: none;
+    line-height: 0.9;
+}
+
+.brand-text {
+    display: flex;
+    flex-direction: column;
+}
+
+
+.tagline {
+   font-size: 0.7rem;
+    color: var(--gold);
+    font-weight: 700;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+    margin-top: 2px;
+}
+
+.nav-right {
+    display: flex;
+    align-items: center;
+    gap: 40px;
+}
+
+.nav-links {
+    display: flex;
+    list-style: none;
+    align-items: center;
+    gap: 25px;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: var(--text);
+    font-weight: 400; /* Thin links */
+    font-size: 15px;
+    transition: 0.3s;
+}
+
+.nav-links a.active-link {
+    color: var(--gold) !important;
+    font-weight: 500;
+
+}
+
+.nav-links a:hover {
+    color: var(--gold);
+}
+.nav-buttons {
+    display: flex;
+    gap: 12px;
+}
+
+
+.btn-signup {
+    padding: 8px 22px;
+    border-radius: 20px;
+    text-decoration: none;
+    font-size: 0.9rem;
+    font-weight: 500;
+    transition: 0.3s;
+}
+
+
+.btn-signup {
+    background: var(--white);
+    color: var(--text);
+    border: 1px solid #ddd;
+}
+
+.btn-signup:hover {
+    background: var(--gold);
+    color: white;
+    border-color: var(--gold);
+}
+
+/* Features Grid */
+.features-section {
+    padding: 140px 0 80px;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.section-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 3rem;
+    text-align: center;
+    margin-bottom: 60px;
+    color: #222;
+}
+
+.features-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+}
+
+.feature-card {
+    background: var(--white);
+    padding: 40px 25px;
+    border-radius: 24px;
+    text-align: center;
+    /* Match home page border and transition */
+    border: 1px solid rgba(0, 0, 0, 0.05); 
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.02);
+    cursor: pointer;
+}
+
+.feature-card:hover {
+    transform: translateY(-10px); /* Lifts the card */
+    border-color: var(--gold); /* The golden border appears */
+    background: rgba(255, 255, 255, 0.8); /* Slight transparency shift */
+    
+    /* Adds the subtle golden glow/shadow */
+    box-shadow: 0 15px 35px rgba(181, 163, 106, 0.15);
+}
+.feature-card:hover .icon-box {
+    transform: scale(1.1);
+    transition: 0.3s ease;
+}
+
+.icon-box {
+    font-size: 2.2rem;
+    color: var(--gold);
+    margin-bottom: 20px;
+    transition: 0.3s ease;
+}
+.icon-box {
+    font-size: 2.2rem;
+    color: var(--gold);
+    margin-bottom: 20px;
+}
+
+.feature-card h3 {
+    font-size: 1.1rem;
+    margin-bottom: 10px;
+    font-weight: 600;
+}
+
+.feature-card p {
+    font-size: 0.9rem;
+    color: #666;
+    line-height: 1.4;
+}
+
+/* Scroll Animation */
+.reveal {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: 0.8s ease;
+}
+
+.reveal.active {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+@media (max-width: 1024px) {
+    .features-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 600px) {
+    .features-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .section-title {
+        font-size: 2rem;
+    }
+}

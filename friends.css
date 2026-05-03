@@ -1,0 +1,84 @@
+/* --- LAYOUT & CONTAINERS --- */
+.container {
+    display: grid;
+    grid-template-columns: 100px 320px 1fr;
+    height: 100vh;
+}
+
+.chat {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    background: #f6f3e9; /* Matches your --bg */
+    position: relative;
+    overflow: hidden;
+}
+
+/* THE CRITICAL FIX: Ensures the box is visible and expandable */
+.messages {
+    flex: 1;
+    overflow-y: auto;
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    min-height: 0; /* Prevents flex items from overflowing */
+}
+
+/* --- MESSAGE BUBBLES --- */
+.message {
+    max-width: 65%;
+    padding: 12px 18px;
+    font-size: 14px;
+    border-radius: 18px;
+    line-height: 1.5;
+    position: relative;
+    word-wrap: break-word;
+    display: block;
+    animation: fadeIn 0.3s ease;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.sent {
+    background: #b5a36a; /* var(--gold) */
+    color: white !important;
+    align-self: flex-end;
+    border-bottom-right-radius: 2px;
+    box-shadow: 0 4px 15px rgba(181, 163, 106, 0.2);
+}
+
+.received {
+    background: white;
+    color: #333 !important; /* var(--text) */
+    align-self: flex-start;
+    border-bottom-left-radius: 2px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+}
+
+/* --- MEDIA --- */
+.message img {
+    max-width: 250px;
+    border-radius: 12px;
+}
+
+.sent audio {
+    filter: sepia(20%) hue-rotate(10deg) brightness(90%);
+}
+.chat {
+    display: flex;
+    flex-direction: column;
+    height: 100vh; /* Takes full screen height */
+}
+
+.messages {
+    flex: 1; /* This is CRITICAL: it forces the chat area to fill all space */
+    overflow-y: auto;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}

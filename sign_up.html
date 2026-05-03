@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Join Hi-Hive | Sign Up</title>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@400;500;600&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="sign_up.css">
+    <link rel="stylesheet" href="terms.css">
+    <link rel="stylesheet" href="phone_signup.css">
+</head>
+
+<body>
+
+    <div class="bg-circle circle-1"></div>
+    <div class="bg-circle circle-2"></div>
+
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="brand-wrapper">
+                <div class="logo-icon">
+                    <img src="Logo.png" alt="Hi-Hive Logo" class="nav-logo-img">
+                </div>
+                <div class="brand-text">
+                    <a href="index.html" class="logo-text">Hi-Hive</a>
+                    <span class="tagline">Connect • Chat • Buzz</span>
+                </div>
+            </div>
+            <ul class="nav-links">
+                <li><a href="home.html">Home</a></li>
+                <li><a href="features.html">Features</a></li>
+                <li><a href="support.html">Support</a></li>
+                <li class="nav-btns"><a href="login.html" class="nav-cta">Log In</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <main class="signup-wrapper">
+        <div class="glass-card signup-card">
+            <h2>Join Hi-Hive</h2>
+
+            <form id="signupForm">
+                <div class="row">
+                    <div class="input-field">
+                        <i class="fas fa-user icon"></i>
+                        <input type="text" id="firstName" placeholder="First Name" required>
+                    </div>
+                    <div class="input-field">
+                        <i class="fas fa-user icon"></i>
+                        <input type="text" id="lastName" placeholder="Last Name" required>
+                    </div>
+                </div>
+
+                <div class="input-field">
+                    <i class="fas fa-envelope icon"></i>
+                    <input type="email" id="email" placeholder="Username or Email" required>
+                </div>
+
+                <div class="input-field">
+                    <i class="fas fa-lock icon"></i>
+                    <input type="password" id="password" placeholder="Create Password" required>
+                    <i class="fas fa-eye-slash toggle-password"></i>
+                </div>
+
+                <div class="input-field">
+                    <i class="fas fa-lock icon"></i>
+                    <input type="password" id="confirmPassword" placeholder="Confirm Password" required>
+                    <i class="fas fa-eye-slash toggle-password"></i>
+                </div>
+
+                <div class="action-row">
+                    <div class="social-login">
+                        <p class="social-title">Sign Up with another method:</p>
+
+                        <div class="social-methods">
+                            <a href="#" class="social-link-item" onclick="openOTPModal(event)">
+                                <i class="fas fa-phone-alt"></i>
+                                <span>Sign Up with Phone Number</span>
+                            </a>
+
+                            <a href="https://accounts.google.com/" class="social-link-item">
+                                <i class="fab fa-google"></i>
+                                <span>Google</span>
+                            </a>
+                        </div>
+                    </div>
+                    <button type="submit" class="register-btn">Register</button>
+                </div>
+
+                <p class="terms">
+                    By registering you agree to our
+                    <a href="#" onclick="openTerms()">Terms & Conditions</a>
+                </p>
+
+                <p class="login-link">Already a member? <a href="login.html">Log In here</a></p>
+            </form>
+        </div>
+    </main>
+    <div id="termsModal" class="terms-modal">
+        <div class="terms-box">
+            <div class="terms-header">
+                <h2>Terms & Conditions</h2>
+                <span class="close-btn" onclick="closeTerms()">&times;</span>
+            </div>
+
+            <div class="terms-text">
+                <h3>1. Introduction</h3>
+                <p>Welcome to Hi-Hive. By creating an account or using our platform you agree to follow these Terms &
+                    Conditions.</p>
+
+                <h3>2. User Accounts</h3>
+                <p>Users must provide accurate information while registering and must keep their login credentials
+                    secure.</p>
+
+                <h3>3. Acceptable Use</h3>
+                <ul>
+                    <li>No spam messages or advertisements</li>
+                    <li>No harassment or abusive behaviour</li>
+                    <li>No sharing illegal or harmful content</li>
+                    <li>No attempts to hack or damage the platform</li>
+                </ul>
+
+                <h3>4. Privacy</h3>
+                <p>Hi-Hive respects user privacy and takes reasonable steps to protect personal data.</p>
+
+                <h3>5. Content Responsibility</h3>
+                <p>Users are responsible for the messages and content they share on the platform.</p>
+
+                <h3>6. Account Suspension</h3>
+                <p>Accounts violating these rules may be suspended or permanently removed.</p>
+
+                <h3>7. Changes to Terms</h3>
+                <p>Hi-Hive may update these Terms & Conditions occasionally.</p>
+            </div>
+
+            <div class="terms-footer">
+                <button class="accept-btn" onclick="acceptTerms()">I Accept</button>
+            </div>
+        </div>
+    </div>
+    <div id="phoneModal" class="modal-overlay">
+        <div class="modal-card">
+            <button class="modal-close" onclick="closePhoneModal()">&times;</button>
+
+            <div id="phoneInputStep">
+                <i class="fas fa-mobile-alt modal-icon"></i>
+                <h2>Phone Sign Up</h2>
+                <p>Enter your number to join the Hi-Hive</p>
+
+                <div class="modal-input-field">
+                    <i class="fas fa-phone"></i>
+                    <input type="tel" id="modalPhoneNumber" placeholder="Enter Phone Number">
+                </div>
+
+                <button id="sendBtn" class="modal-btn" onclick="simulateSignup()">Register Now</button>
+            </div>
+        </div>
+    </div>
+    <script src="sign_up.js"></script>
+    <script src="terms.js"></script>
+    <script src="phone_signup.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Hi-Hive Profile</title>
+    <link rel="stylesheet" href="profile.css">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500&family=Playfair+Display:wght@500&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+    <div class="profile-container">
+        <h2>My Profile</h2>
+        <div class="profile-picture">
+
+            <!-- NEW WRAPPER -->
+            <div class="img-box">
+                <img src="user.png" id="profileImage" alt="Profile Image">
+            </div>
+
+            <button onclick="changePhoto()">Change Photo</button>
+            <input type="file" id="photoInput" accept="image/*" hidden>
+
+        </div>
+        <div class="profile-info">
+            <label>Username</label>
+            <p id="profileUsername">Vansh</p>
+            <label>Email</label>
+            <p id="profileEmail">vansh@email.com</p>
+            <label>Bio / Status</label>
+            <p id="profileBio">Hello! Welcome to Hi-Hive.</p>
+        </div>
+        <div class="profile-buttons">
+            <button class="edit-btn" onclick="editProfile()">Edit Profile</button>
+            <button class="logout-btn" onclick="logout()">Log Out</button>
+        </div>
+    </div>
+    <script src="profile.js"></script>
+</body>
+
+</html>

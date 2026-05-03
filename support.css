@@ -1,0 +1,363 @@
+:root {
+    --bg: #f5f2e8;
+    --gold: #b5a36a;
+    --text: #333333;
+    --white: #ffffff;
+    --glass: rgba(255, 255, 255, 0.5);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    overflow-x: hidden;
+}
+
+/* Background Circles */
+.bg-circle {
+    position: fixed;
+    border-radius: 50%;
+    filter: blur(80px);
+    z-index: -1;
+    opacity: 0.3;
+}
+
+.circle-1 {
+    width: 400px;
+    height: 400px;
+    background: var(--accent-gold);
+    top: -100px;
+    right: -50px;
+}
+
+.circle-2 {
+    width: 300px;
+    height: 300px;
+    background: #dcd4b8;
+    bottom: -50px;
+    left: -50px;
+}
+
+/* NAVBAR: Exact Style match */
+.navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 2px 0;
+    background: var(--glass);
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
+    border-bottom: 1px solid var(--glass-border);
+    z-index: 1000;
+}
+
+.nav-container {
+   display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 40px;
+}
+
+.nav-cta {
+    background: var(--gold);
+    color: white !important;
+    padding: 10px 22px;
+    border-radius: 8px;
+    font-weight: 500 !important;
+}
+
+.brand-wrapper {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+.logo-icon {
+    width: 100px; 
+    height: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.logo-icon img {
+    height: 100%;
+    width: auto;
+    object-fit: contain;
+
+}
+
+.logo-text {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.6rem;
+    font-weight: bold;
+    color: var(--text);
+    text-decoration: none;
+    line-height: 0.9;
+}
+
+.brand-text {
+    display: flex;
+    flex-direction: column;
+}
+.tagline {
+   font-size: 0.7rem;
+    color: var(--gold);
+    font-weight: 700;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+    margin-top: 2px;
+}
+
+.nav-right {
+    display: flex;
+    align-items: center;
+    gap: 40px;
+}
+
+.nav-links {
+    display: flex;
+    list-style: none;
+    align-items: center;
+    gap: 25px;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: var(--text);
+    font-weight: 400;
+    font-size: 15px;
+    transition: 0.3s;
+}
+
+.nav-links a.active-link {
+    color: var(--gold) !important;
+font-weight: 500;
+}
+.nav-links a:hover {
+    color: var(--gold);
+}
+.nav-buttons {
+    display: flex;
+    gap: 12px;
+}
+
+
+.btn-signup {
+    padding: 8px 22px;
+    border-radius: 20px;
+    text-decoration: none;
+    font-size: 0.9rem;
+    font-weight: 500;
+    transition: 0.3s;
+}
+
+
+.btn-signup {
+    background: var(--white);
+    color: var(--text);
+    border: 1px solid #ddd;
+}
+
+.btn-signup:hover {
+    background: var(--gold);
+    color: white;
+    border-color: var(--gold);
+}
+
+/* Glass Card Global Style */
+.glass-card {
+    background: var(--glass-white);
+    backdrop-filter: blur(12px);
+    border: 1px solid var(--border-soft);
+    border-radius: 24px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.05);
+}
+
+/* Support Hero */
+.support-hero {
+    padding-top: 150px !important;
+    text-align: center;
+    padding: 60px 20px;
+}
+
+.support-hero h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+}
+
+.support-sub {
+    opacity: 0.7;
+    margin-bottom: 30px;
+}
+
+.search-box {
+    max-width: 500px;
+    margin: 0 auto;
+    padding: 12px 20px;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.search-box input {
+    background: transparent;
+    border: none;
+    outline: none;
+    width: 100%;
+    font-size: 1rem;
+}
+
+.search-box i {
+    color: var(--accent-gold);
+}
+
+/* Grid */
+.support-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 25px;
+    max-width: 1100px;
+    margin: 0 auto 60px;
+    padding: 0 20px;
+}
+
+.support-card {
+    padding: 40px;
+    text-align: center;
+    transition: 0.3s;
+    cursor: pointer;
+}
+
+.support-card:hover {
+    transform: translateY(-10px);
+    background: rgba(255, 255, 255, 0.6);
+}
+
+.card-icon {
+    font-size: 2.5rem;
+    color: var(--gold);
+    margin-bottom: 20px;
+}
+
+/* FAQ */
+.faq-section {
+    max-width: 800px;
+    margin: 40px auto;
+    padding: 0 20px;
+}
+
+.section-title {
+    font-family: 'Playfair Display', serif;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.faq-container {
+    padding: 20px;
+}
+.faq-item {
+    margin-bottom: 15px; 
+}
+
+.faq-section h2 {
+    font-family: 'Playfair Display', serif; /* Elegant heading */
+    margin-bottom: 25px;
+    text-align: center;
+}
+
+.faq-question {
+    width: 100%;
+    background-color: var(--gold) !important;
+    color: white;
+    padding: 20px;
+    background: transparent;
+    border: none;
+    border-radius: 15px;
+    display: flex;
+    justify-content: space-between;
+    font-weight: 600;
+    cursor: pointer;
+    font-family: 'Inter', sans-serif;
+    border-bottom: 1px solid var(--border-soft);
+}
+
+.faq-answer {
+    max-height: 0;
+    overflow: hidden;
+    transition: 0.3s ease-out;
+    padding: 0 20px;
+    font-family: 'Inter',sans-serif;
+}
+
+.contact-section h2 {
+    font-family: 'Playfair Display', serif;
+    margin-bottom: 25px;
+}
+
+.faq-answer.show {
+    max-height: 100px;
+    padding: 15px 20px;
+}
+
+/* Contact Section */
+.contact-section {
+    max-width: 600px;
+    margin: 60px auto 100px;
+    padding: 0 20px;
+}
+
+.contact-card {
+    padding: 40px;
+    text-align: center;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    margin-top: 25px;
+}
+
+input,
+textarea {
+    padding: 15px;
+    border-radius: 12px;
+    border: 1px solid var(--border-soft);
+    background: white;
+    outline: none;
+    font-family: 'Inter',sans-serif;
+}
+
+textarea {
+    height: 120px;
+}
+
+.register-btn {
+    background: var(--gold);
+    color: white;
+    padding: 15px;
+    border: none;
+    border-radius: 12px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.register-btn:hover {
+    background: var(--hover);
+    transform: scale(1.02);
+}
+
+.search-box i {
+    color: var(--gold) !important;
+}

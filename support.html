@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Support | Hi-Hive</title>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@400;500;600&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="support.css">
+</head>
+
+<body>
+
+    <div class="bg-circle circle-1"></div>
+    <div class="bg-circle circle-2"></div>
+
+    <nav class="navbar">
+    <div class="nav-container">
+        <div class="brand-wrapper">
+            <div class="logo-icon">
+                <img src="Logo.png" alt="Hi-Hive Logo" class="nav-logo-img">
+            </div>
+            <div class="brand-text">
+                <span class="logo-text">Hi-Hive</span>
+                <span class="tagline">Connect • Chat • Buzz</span>
+            </div>
+        </div>
+
+        <ul class="nav-links">
+            <li><a href="home.html">Home</a></li>
+            <li><a href="features.html">Features</a></li>
+            <li><a href="support.html" class="active-link">Support</a></li>
+            <li><a href="sign_up.html" class="nav-cta">Sign Up</a></li>
+        </ul>
+    </div>
+</nav>
+
+    <main class="support-wrapper">
+        <section class="support-hero">
+            <h2>Support Center</h2>
+            <p class="support-sub">How can we help you?</p>
+            <div class="search-box glass-card">
+                <i class="fas fa-search"></i>
+                <input type="text" id="searchBar" placeholder="Search your issue...">
+            </div>
+        </section>
+
+        <div class="support-grid">
+            <div class="support-card glass-card">
+                <i class="fas fa-user-circle card-icon"></i>
+                <h3>Account Issues</h3>
+                <p>Password reset, login problems or profile recovery.</p>
+            </div>
+
+            <div class="support-card glass-card">
+                <i class="fas fa-shield-halved card-icon"></i>
+                <h3>Privacy & Security</h3>
+                <p>Report hacked account or security concerns.</p>
+            </div>
+
+            <div class="support-card glass-card">
+                <i class="fas fa-comment-dots card-icon"></i>
+                <h3>Messaging</h3>
+                <p>Messages not sending or delayed delivery.</p>
+            </div>
+
+            <div class="support-card glass-card">
+                <i class="fas fa-video card-icon"></i>
+                <h3>Calls & Video</h3>
+                <p>Voice or video call connection issues.</p>
+            </div>
+            
+        </div>
+
+        <section class="faq-section">
+            <h2 class="section-title">Frequently Asked Questions</h2>
+            <div class="faq-container ">
+                <div class="faq-item">
+                    <button class="faq-question">
+                        How do I reset my password?
+                        <i class="fas fa-chevron-down"></i>
+                    </button>
+                    <div class="faq-answer">
+                        <p>Go to the login page and click "Forgot Password" to receive a reset link.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question">
+                        Why are my messages not sending?
+                        <i class="fas fa-chevron-down"></i>
+                    </button>
+                    <div class="faq-answer">
+                        <p>Check your internet connection or ensure you are on the latest app version.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="contact-section">
+            <div class="contact-card">
+                <h2>Contact Support</h2>
+                <form id="supportForm">
+                    <input type="text" placeholder="Your Name" required>
+                    <input type="email" placeholder="Your Email" required>
+                    <textarea placeholder="Describe your issue..." required></textarea>
+                    <button type="submit" class="register-btn">Submit Request</button>
+                </form>
+                <p id="successMessage"></p>
+            </div>
+        </section>
+    </main>
+
+    <script src="support.js"></script>
+</body>
+
+</html>

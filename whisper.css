@@ -1,0 +1,243 @@
+/* --- 1. VARIABLES & RESET --- */
+:root {
+    --bg: #f5f2e8;
+    --gold: #b5a36a;
+    --text: #333333;
+    --white: #ffffff;
+    --glass: rgba(255, 255, 255, 0.5);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    background-color: var(--bg);
+    color: var(--text);
+    overflow-x: hidden;
+}
+
+/* --- 2. BACKGROUND DECORATION --- */
+.bg-circle {
+    position: fixed;
+    border-radius: 50%;
+    filter: blur(80px);
+    z-index: -1;
+    opacity: 0.3;
+}
+
+.circle-1 {
+    width: 400px;
+    height: 400px;
+    background: var(--gold);
+    top: -100px;
+    right: -50px;
+}
+
+.circle-2 {
+    width: 300px;
+    height: 300px;
+    background: #dcd4b8;
+    bottom: -50px;
+    left: -50px;
+}
+
+/* --- 3. NAVBAR (EXACT PROJECT MATCH) --- */
+.navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 2px 0;
+    background: var(--glass);
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
+    border-bottom: 1px solid var(--glass-border);
+    z-index: 1000;
+}
+
+.nav-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 40px;
+}
+
+.brand-wrapper {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.logo-icon {
+    width: 100px;
+    height: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.logo-icon img {
+    height: 100%;
+    width: auto;
+    object-fit: contain;
+}
+
+.logo-text {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.6rem;
+    font-weight: bold;
+    color: var(--text);
+    text-decoration: none;
+    line-height: 0.9;
+}
+
+.logo-text {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.6rem;
+    font-weight: bold;
+    color: var(--text);
+    text-decoration: none;
+    line-height: 0.9;
+}
+
+.brand-text {
+    display: flex;
+    flex-direction: column;
+}
+
+
+.tagline {
+   font-size: 0.7rem;
+    color: var(--gold);
+    font-weight: 700;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+    margin-top: 2px;
+}
+.nav-links {
+    display: flex;
+    list-style: none;
+    gap: 25px;
+    align-items: center;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: var(--text);
+    font-weight: 400;
+    font-size: 15px;
+    transition: 0.3s;
+}
+
+.nav-links a.active-link {
+    color: var(--gold) !important;
+    font-weight: 500;
+}
+/* --- 4. FLOATING GRID LAYOUT --- */
+.whisper-feed {
+    padding-top: 180px !important;
+    /* Space for Navbar */
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    /* Exactly 2 boxes side-by-side */
+    gap: 30px;
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 20px 80px;
+}
+
+.whisper-box {
+    background: var(--glass);
+    backdrop-filter: blur(12px);
+    border-radius: 24px;
+    border: 1px solid var(--glass-border);
+    padding: 30px;
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    cursor: pointer;
+
+    /* Gentle floating animation */
+    animation: gentleFloat 6s ease-in-out infinite;
+}
+
+/* Staggered floating effect */
+.whisper-box:nth-child(even) {
+    animation-delay: 2s;
+}
+
+@keyframes gentleFloat {
+
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-10px);
+    }
+}
+
+/* HOVER: Lift + Glow + Stop Animation */
+.whisper-box:hover {
+    animation-play-state: paused;
+    transform: translateY(-15px) scale(1.02) !important;
+    border-color: var(--gold);
+    background: rgba(255, 255, 255, 0.7);
+    box-shadow: 0 20px 40px rgba(181, 163, 106, 0.2);
+}
+
+/* --- 5. BOX CONTENT STYLING --- */
+.box-header {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 15px;
+}
+
+.user-name {
+    font-weight: 700;
+    color: var(--gold);
+    font-size: 0.9rem;
+}
+
+.time {
+    font-size: 0.8rem;
+    opacity: 0.5;
+}
+
+.whisper-text {
+    font-family: 'Inter', sans-serif;
+    font-size: 1.05rem;
+    line-height: 1.6;
+    color: var(--text);
+    margin-bottom: 20px;
+}
+
+.box-footer {
+    display: flex;
+    gap: 10px;
+}
+
+.tag {
+    font-size: 0.75rem;
+    font-weight: 600;
+    color: var(--gold);
+    background: rgba(181, 163, 106, 0.1);
+    padding: 4px 12px;
+    border-radius: 50px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+/* --- 6. RESPONSIVENESS --- */
+@media (max-width: 850px) {
+    .whisper-feed {
+        grid-template-columns: 1fr;
+        /* Stack on mobile */
+        max-width: 550px;
+    }
+}

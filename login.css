@@ -1,0 +1,303 @@
+:root {
+    --bg: #f6f3e9;
+    --gold: #b5a36a;
+    --text: #333333;
+    --glass: rgba(255, 255, 255, 0.4);
+    --glass-border: rgba(255, 255, 255, 0.2);
+    --off-white: #F6F3E9;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+body {
+    font-family: 'Inter', sans-serif;
+    background-color: var(--bg);
+    color: var(--text);
+    min-height: 100vh;
+    overflow-x: hidden;
+}
+
+/* --- DECORATIVE BACKGROUND --- */
+.bg-circle {
+    position: fixed;
+    border-radius: 50%;
+    z-index: -1;
+    filter: blur(80px);
+    background: rgba(181, 163, 106, 0.15);
+}
+
+h1,
+h2,
+.logo-text {
+    font-family: 'Playfair Display', serif;
+}
+
+.circle-1 {
+    width: 400px;
+    height: 400px;
+    background: var(--gold);
+    top: -100px;
+    right: -100px;
+}
+
+.circle-2 {
+    width: 300px;
+    height: 300px;
+    background: var(--gold);
+    bottom: -50px;
+    left: -50px;
+}
+
+/* --- NAVBAR (Glassmorphism) --- */
+.navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 2px 0;
+    background: var(--glass);
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
+    border-bottom: 1px solid var(--glass-border);
+    z-index: 1000;
+}
+
+.nav-container {
+    display: flex;
+    justify-content: space-between;
+    /* This pushes links to the right */
+    align-items: center;
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 40px;
+}
+
+.logo-icon {
+    width: 100px;
+    height: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.logo-container {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.logo {
+    height: 55px;
+    /* Clean size for navigation */
+    width: auto;
+}
+
+.brand-wrapper {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.nav-logo-img {
+    height: 100%;
+    width: auto;
+    object-fit: contain;
+}
+
+.brand-text {
+    display: flex;
+    flex-direction: column;
+}
+
+.brand-name {
+    font-family: 'Playfair Display', serif;
+    color: var(--gold);
+    font-size: 24px;
+    margin: 0;
+}
+
+.logo-text {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.6rem;
+    font-weight: bold;
+    color: var(--text);
+    text-decoration: none;
+    line-height: 0.9;
+}
+
+.tagline {
+    font-size: 0.7rem;
+    color: var(--gold);
+    font-weight: 700;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+    margin-top: 2px;
+}
+
+
+.nav-links {
+    display: flex;
+    list-style: none;
+    align-items: center;
+    gap: 25px;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: var(--text);
+    font-weight: 400;
+    font-size: 15px;
+    transition: 0.3s;
+}
+
+.nav-links a:hover {
+    color: var(--gold);
+}
+
+.nav-cta {
+    background: var(--gold);
+    color: white !important;
+    padding: 10px 22px;
+    border-radius: 8px;
+    font-weight: 500 !important;
+}
+
+/* --- LOGIN SECTION --- */
+.login-wrapper {
+    padding-top: 150px;
+    /* Space for fixed nav */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-bottom: 50px;
+}
+
+.glass-card {
+    background: var(--card-bg);
+    width: 100%;
+    max-width: 480px;
+    padding: 60px 50px;
+    border-radius: 30px;
+    border: 1px solid rgba(181, 163, 106, 0.2);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.05);
+    transition: transform 0.3s ease;
+}
+
+.glass-card:hover {
+    transform: translateY(-5px);
+}
+
+.glass-card h2 {
+    font-family: 'Playfair Display', serif;
+    text-align: center;
+    font-size: 28px;
+    margin-bottom: 40px;
+}
+
+/* --- INPUTS --- */
+.input-field {
+    display: flex;
+    align-items: center;
+    border-bottom: 1.5px solid #d1c7a6;
+    margin-bottom: 25px;
+    padding: 5px 0;
+    transition: 0.3s;
+}
+
+.input-field:focus-within {
+    border-bottom-color: var(--gold);
+}
+
+.input-field input {
+    background: transparent;
+    border: none;
+    outline: none;
+    width: 100%;
+    padding: 10px;
+    font-family: 'Inter', sans-serif;
+    font-size: 16px;
+    color: var(--text);
+}
+
+.icon {
+    color: #666;
+    width: 20px;
+    text-align: center;
+}
+
+.eye-btn {
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: #666;
+}
+
+/* --- FORM ACTIONS --- */
+.form-actions {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 35px;
+}
+
+.forgot-link {
+    font-family: 'Playfair Display', serif;
+    color: var(--text);
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 15px;
+}
+
+.login-btn {
+    background: var(--gold);
+    color: white;
+    font-family: 'Playfair Display', serif;
+    font-size: 16px;
+    padding: 12px 30px;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: 0.3s;
+    box-shadow: 0 4px 15px rgba(181, 163, 106, 0.3);
+}
+
+.login-btn:hover {
+    background: var(--gold-hover);
+    transform: scale(1.02);
+}
+
+.card-footer {
+    text-align: center;
+    margin-top: 30px;
+    font-family: 'Inter', sans-serif;
+    font-size: 14px;
+    color: #666;
+}
+
+.card-footer a {
+    color: var(--text);
+    font-weight: 600;
+    text-decoration: underline;
+}
+
+/* Mobile Tweak */
+@media (max-width: 600px) {
+    .navbar {
+        padding: 0 20px;
+    }
+
+    .nav-links {
+        display: none;
+    }
+
+    /* Consider a burger menu later */
+    .glass-card {
+        margin: 0 20px;
+        padding: 40px 30px;
+    }
+}

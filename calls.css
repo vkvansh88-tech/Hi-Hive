@@ -1,0 +1,110 @@
+/* Layout Fixes */
+.contacts {
+    overflow-x: hidden !important;
+}
+
+.contact-list {
+    overflow-x: hidden !important;
+    overflow-y: auto;
+    height: calc(100vh - 160px);
+    padding-right: 5px;
+}
+
+/* Individual Contact Entry */
+.contact {
+    width: 100%;
+    display: flex !important;
+    align-items: center !important;
+    padding: 12px;
+    border-radius: 15px;
+    margin-bottom: 5px;
+    transition: 0.2s;
+    box-sizing: border-box;
+}
+
+.contact:hover {
+    background: white;
+}
+
+.contact img {
+    width: 45px;
+    height: 45px;
+    border-radius: 12px;
+    flex-shrink: 0;
+}
+
+.contact-info {
+    flex: 1;
+    min-width: 0;
+    margin-left: 12px;
+}
+
+.contact-info h4 {
+    font-size: 14px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    color: var(--text);
+}
+
+.call-meta {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    font-size: 11px;
+    color: #888;
+}
+
+/* Status Icons */
+.status-incoming {
+    color: #2ecc71;
+    font-size: 10px;
+}
+
+.status-missed {
+    color: #e74c3c;
+    font-size: 10px;
+}
+
+/* Action Buttons */
+.call-actions {
+    display: flex;
+    gap: 8px;
+    flex-shrink: 0;
+}
+
+.call-actions button {
+    background: white;
+    border: 1px solid rgba(181, 163, 106, 0.15);
+    width: 34px;
+    height: 34px;
+    border-radius: 10px;
+    color: var(--gold);
+    cursor: pointer;
+    transition: 0.3s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.call-actions button:hover {
+    background: var(--gold);
+    color: white;
+    transform: translateY(-2px);
+}
+
+/* Empty State Styling */
+.empty-state {
+    display: flex !important;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: #999;
+}
+
+.empty-call-icon {
+    font-size: 60px;
+    color: var(--gold);
+    opacity: 0.2;
+    margin-bottom: 15px;
+}

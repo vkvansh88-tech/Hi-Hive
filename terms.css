@@ -1,0 +1,154 @@
+/* --- TERMS MODAL GLASSMOPHISM --- */
+.terms-text h3 {
+    font-family: 'Inter', sans-serif;
+    font-size: 1.05rem;
+    color: #000000;
+    margin-top: 20px;
+    margin-bottom: 8px;
+    font-weight: 600;
+
+}
+
+/* Added slight spacing for the list items to match the new header style */
+.terms-text li {
+    margin-bottom: 8px;
+    color: #444;
+}
+
+.terms-modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.4);
+    backdrop-filter: blur(10px);
+    justify-content: center;
+    align-items: center;
+    z-index: 2000;
+}
+
+.terms-box {
+    background: var(--glass);
+    backdrop-filter: blur(25px);
+    border: 1px solid var(--glass-border);
+    width: 520px;
+    max-height: 75vh;
+    padding: 35px;
+    border-radius: 25px;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.2);
+    animation: modalPop 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+@keyframes modalPop {
+    from {
+        transform: scale(0.8);
+        opacity: 0;
+    }
+
+    to {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+.terms-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.terms-header h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.8rem;
+    color: var(--text);
+}
+
+.close-btn {
+    font-size: 28px;
+    cursor: pointer;
+    color: var(--text);
+    opacity: 0.6;
+    transition: 0.3s;
+}
+
+.close-btn:hover {
+    color: var(--gold);
+    opacity: 1;
+}
+
+.terms-text {
+    overflow-y: auto;
+    flex: 1;
+    line-height: 1.6;
+    margin-bottom: 20px;
+    padding-right: 15px;
+    text-align: left;
+}
+
+/* Custom Scrollbar */
+.terms-text::-webkit-scrollbar {
+    width: 5px;
+}
+
+.terms-text::-webkit-scrollbar-thumb {
+    background: var(--gold);
+    border-radius: 10px;
+}
+
+.terms-text h3 {
+    font-family: 'Inter', sans-serif;
+    font-size: 1rem;
+    color: var(--gold);
+    margin-top: 15px;
+    font-weight: 600;
+}
+
+.terms-text p,
+.terms-text li {
+    font-family: 'Inter', sans-serif;
+    font-size: 0.9rem;
+    color: rgb(32, 30, 30);
+}
+
+.terms-text ul {
+    margin-left: 20px;
+}
+
+.terms-footer {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.accept-btn {
+    background: var(--gold);
+    color: white;
+    border: none;
+    padding: 12px 30px;
+    border-radius: 10px;
+    cursor: pointer;
+    font-family: 'Inter', sans-serif;
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+
+.accept-btn:hover {
+    background: #9e8d58;
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(181, 163, 106, 0.4);
+}
+
+#termsModal .terms-text h3 {
+    color: rgb(26, 24, 24) !important; /* Forces the color to gold */
+    font-family: 'Inter', sans-serif !important;
+    font-size: 1.05rem !important;
+    font-weight: 700 !important;
+    margin-top: 20px !important;
+}
+
+/* If you want the numbers to be BLACK instead, use this: */
+/* #termsModal .terms-text h3 { color: #000000 !important; } */
