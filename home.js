@@ -35,7 +35,7 @@ function playChat() {
         }, 50);
 
         i++;
-        setTimeout(playChat, 2000);
+        setTimeout(playChat, 200);
     }
 }
 
